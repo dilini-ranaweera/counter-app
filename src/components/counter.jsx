@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-    constructor() {
-        super();
-        this.state = {count: 0};
-    }
+    state = {
+        count: this.props.initCount 
+    };
+    
 
     render() {
         return <>
@@ -17,6 +17,13 @@ class Counter extends Component {
                 className="btn btn-secondary btn-sm">
                 Incrementor!
             </button>
+            <button 
+                onClick = {() => {
+                    this.setState({count: this.state.count -1})
+                }}
+                className="btn btn-danger btn-small m-4">
+                    Delete :/</button>
+            <br />
         </>
         
     }
